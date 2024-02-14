@@ -18,7 +18,7 @@ String::~String() {
 	delete[] (this->data);
 }
 
-String::String(const String& other) {
+String::String(String& other) {
 	delete[] this->data;
 	this->data = new char[other.len + 1];
 	strncpy(this->data, other.data, other.len + 1);

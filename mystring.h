@@ -19,7 +19,7 @@ public:
 
 	const char* c_str() const;
 
-	String(const String& other);
+	String(String& other);
 
 	String& operator=(const char cstr[]);
 
