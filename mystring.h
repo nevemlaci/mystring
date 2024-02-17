@@ -7,33 +7,33 @@
 /// @brief Dynamic character array storage.
 /// Stores a null-terminated char array.
 /// 
-class String {
-public:
-	/// @brief 
-	/// @param cstr 
-	String(const char* cstr = nullptr);
+	class String {
+	public:
+		/// @brief 
+		/// @param cstr 
+		String(const char* cstr = nullptr);
 
-	~String();
+		~String();
 
-	size_t length() const;
+		size_t length() const;
 
-	const char* c_str() const;
+		const char* c_str() const;
 
-	String(String& other);
+		String(const String& other);
 
-	String& operator=(const char cstr[]);
+		String& operator=(const char cstr[]);
 
-	bool operator==(String other) const;
+		bool operator==(String other) const;
 
-	bool operator>(String other) const;
+		bool operator>(String other) const;
 
-	bool operator<(String other) const;
+		bool operator<(String other) const;
 
-private:
-	char* data = nullptr;
-	size_t len = 0;
-};
+	private:
+		char* data = nullptr;
+		size_t len = 0;
+	};
 
-std::ostream& operator<<(std::ostream&, const String& str);
+	std::ostream& operator<<(std::ostream&, const String& str);
 
 #endif

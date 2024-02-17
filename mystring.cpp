@@ -1,7 +1,7 @@
 #include "mystring.h"
 #include "cstring"
 
-String::String(const char* cstr) {
+String::String(const char* cstr) : data(nullptr) {
 	if (cstr == nullptr) {
 		this->data = new char[1];
 		this->data[0] = '\0';
@@ -18,7 +18,7 @@ String::~String() {
 	delete[] (this->data);
 }
 
-String::String(String& other) {
+String::String(const String& other) {
 	delete[] this->data;
 	this->data = new char[other.len + 1];
 	strncpy(this->data, other.data, other.len + 1);
